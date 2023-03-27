@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 
@@ -12,10 +13,16 @@ const Shop = () => {
         .then(data => setProducts(data));
     }, []);
 
+    useEffect( ()=>{
+        const stroedCart = getShoppingCart();
+    }, []);
+
     const handleAddToCart = (product) =>{
         // cart.push(product) ata kaj korbe na react a push korte hole protek bar new array banate hobe
        const newCart = [...cart, product];
        setCart(newCart);
+       addToDb(product.id);
+       
     }
 
     return (
