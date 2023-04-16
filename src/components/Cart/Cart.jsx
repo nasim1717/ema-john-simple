@@ -2,6 +2,7 @@ import React from "react";
 import "./Cart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+
 const Cart = ({ cart, handleClerCart, children }) => {
   // const cart = props.cart; //oprion 1
   // const {cart} = props; //option 2
